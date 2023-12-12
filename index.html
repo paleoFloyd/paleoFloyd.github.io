@@ -241,7 +241,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h1><ul>
+        <ul>
+<li>视频教程<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1NG4y1p74h">https://www.bilibili.com/video/BV1NG4y1p74h</a></li>
+</ul>
+<h1 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h1><ul>
 <li><p>a (append 光标后插入)</p>
 </li>
 <li><p>i (insert 光标前插入)</p>
@@ -288,12 +291,53 @@
 <li>使用{} 在段落之间移动</li>
 <li>使用easy-motion 插件移动</li>
 </ul>
-<h3 id="gg-G"><a href="#gg-G" class="headerlink" title="gg&#x2F;G"></a>gg&#x2F;G</h3><ul>
-<li>移动到文件开头和结尾,  你可以用ctrl+o快速返回 </li>
+<h3 id="vim页面移动"><a href="#vim页面移动" class="headerlink" title="vim页面移动"></a>vim页面移动</h3><ul>
+<li>g&#x2F;G移动到文件开头和结尾,  你可以用ctrl+o快速返回 </li>
 <li>H&#x2F;M&#x2F;L 跳转到文件的开头、中间和结尾</li>
 <li>ctrl+u ctrl+f 上下翻页。zz把屏幕设置为中间</li>
 </ul>
-<h1 id="vim快速增删改查"><a href="#vim快速增删改查" class="headerlink" title="vim快速增删改查"></a>vim快速增删改查</h1><h3 id="增加字符"><a href="#增加字符" class="headerlink" title="增加字符"></a>增加字符</h3><p>- </p>
+<h1 id="vim快速增删改查"><a href="#vim快速增删改查" class="headerlink" title="vim快速增删改查"></a>vim快速增删改查</h1><h3 id="vim快速删除"><a href="#vim快速删除" class="headerlink" title="vim快速删除"></a>vim快速删除</h3><ul>
+<li>x普通模式下快速删除</li>
+<li>d配合文本对象快速删除一个单词daw (delete around world) </li>
+<li>d 和 x 都可以搭配数字执行多次</li>
+<li>dt) 快速删除直到 ) 可替换为其他字符</li>
+</ul>
+<h3 id="vim快速修改"><a href="#vim快速修改" class="headerlink" title="vim快速修改"></a>vim快速修改</h3><ul>
+<li>r(replace) c(change) s(subsitude)</li>
+<li>noarmal 模式下可使用r 替换一个字符， s 替换并进入插入模式</li>
+<li>c 配合文本对象可快速进行修改</li>
+<li>R 不断替换后面一个字符</li>
+<li>S 删除整行并进入插入模式</li>
+<li>C 删除整行并进入插入模式（光标位置不变）</li>
+<li>数字+r&#x2F;s 对多个字符进行修改</li>
+</ul>
+<h3 id="vim查询"><a href="#vim查询" class="headerlink" title="vim查询"></a>vim查询</h3><ul>
+<li>使用&#x2F;或者?进行向前或者反向搜索</li>
+<li>使用n&#x2F;N跳转到下一个或上一个匹配</li>
+<li>使用*或#进行当前单词的前向或后向匹配</li>
+</ul>
+<h1 id="vim替换命令"><a href="#vim替换命令" class="headerlink" title="vim替换命令"></a>vim替换命令</h1><h2 id="subsitude-允许我们替换文本并且支持正则"><a href="#subsitude-允许我们替换文本并且支持正则" class="headerlink" title="subsitude 允许我们替换文本并且支持正则"></a>subsitude 允许我们替换文本并且支持正则</h2><ul>
+<li>:[range]s&#x2F;[ubstitute]&#x2F;{partern}&#x2F;{string}&#x2F;[flags]</li>
+<li>range表示范围如 :10,20 表示10到12行，%表示全部</li>
+<li>partern 是替换的模式, string是替换后文本</li>
+</ul>
+<h2 id="flag-常用标志"><a href="#flag-常用标志" class="headerlink" title="flag 常用标志"></a>flag 常用标志</h2><ul>
+<li>g(global)全局范围内执行</li>
+<li>c(confirm)可以确认或拒绝修改</li>
+</ul>
+<h1 id="vim多文件操作"><a href="#vim多文件操作" class="headerlink" title="vim多文件操作"></a>vim多文件操作</h1><h2 id="buffer-切换"><a href="#buffer-切换" class="headerlink" title="buffer 切换"></a>buffer 切换</h2><ul>
+<li>使用:ls 会列举当前缓冲区， 然后使用:b n 跳转到第n个缓冲区</li>
+<li>:bpre :bnext :bfirst :blast</li>
+<li>:b buffer_name 加上tab补全来跳转</li>
+</ul>
+<h2 id="windown-窗口"><a href="#windown-窗口" class="headerlink" title="windown 窗口"></a>windown 窗口</h2><ul>
+<li>&lt;ctl+w&gt;s 水平分割 &lt;ctl+w&gt;v 垂直分割 或:sp :vs</li>
+<li><C-w>w 在窗口间循环切换</li>
+<li><C-w>h 切换到左边的窗口</li>
+<li><C-w>j 切换到下边的窗口</li>
+<li><C-w>k 切换到上边的窗口</li>
+<li><C-w>l 切换到右边的窗口</li>
+</ul>
 
       
     </div>
