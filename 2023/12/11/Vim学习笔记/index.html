@@ -9,12 +9,12 @@
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="视频教程https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1NG4y1p74h  vim常用配置 《笨方法学vimscript》 插入 a (append 光标后插入)  i (insert 光标前插入)  o (open a line below 下一行插入)  A (append after lin 行最后插入)  I (inster before line 行最前插入)">
+  <meta name="description" content="目录  插入 插入模式下快速纠错   visual模式 （一般用来选择文本） 移动 行间搜索移动 vim水平移动 vim垂直移动 在句子和段落间移动(不常用) vim页面移动   vim快速增删改查 vim快速删除 vim快速修改 vim查询   vim替换命令 subsitude 允许我们替换文本并且支持正则 flag 常用标志   vim多文件操作 buffer 切换 windown 窗口 重">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vim">
 <meta property="og:url" content="http://example.com/2023/12/11/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="视频教程https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1NG4y1p74h  vim常用配置 《笨方法学vimscript》 插入 a (append 光标后插入)  i (insert 光标前插入)  o (open a line below 下一行插入)  A (append after lin 行最后插入)  I (inster before line 行最前插入)">
+<meta property="og:description" content="目录  插入 插入模式下快速纠错   visual模式 （一般用来选择文本） 移动 行间搜索移动 vim水平移动 vim垂直移动 在句子和段落间移动(不常用) vim页面移动   vim快速增删改查 vim快速删除 vim快速修改 vim查询   vim替换命令 subsitude 允许我们替换文本并且支持正则 flag 常用标志   vim多文件操作 buffer 切换 windown 窗口 重">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/image/vim/1.PNG">
 <meta property="og:image" content="http://example.com/image/vim/2.PNG">
@@ -25,7 +25,7 @@
 <meta property="og:image" content="http://example.com/image/vim/7.PNG">
 <meta property="og:image" content="http://example.com/image/vim/11.PNG">
 <meta property="article:published_time" content="2023-12-11T01:08:04.000Z">
-<meta property="article:modified_time" content="2023-12-22T04:46:21.308Z">
+<meta property="article:modified_time" content="2024-01-02T15:56:02.589Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="学习笔记">
 <meta name="twitter:card" content="summary">
@@ -208,8 +208,49 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li>视频教程<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1NG4y1p74h">https://www.bilibili.com/video/BV1NG4y1p74h</a></li>
+        <p>目录</p>
+<ul>
+<li><a href="#%E6%8F%92%E5%85%A5">插入</a><ul>
+<li><a href="#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E4%B8%8B%E5%BF%AB%E9%80%9F%E7%BA%A0%E9%94%99">插入模式下快速纠错</a></li>
+</ul>
+</li>
+<li><a href="#visual%E6%A8%A1%E5%BC%8F-%E4%B8%80%E8%88%AC%E7%94%A8%E6%9D%A5%E9%80%89%E6%8B%A9%E6%96%87%E6%9C%AC">visual模式 （一般用来选择文本）</a></li>
+<li><a href="#%E7%A7%BB%E5%8A%A8">移动</a><ul>
+<li><a href="#%E8%A1%8C%E9%97%B4%E6%90%9C%E7%B4%A2%E7%A7%BB%E5%8A%A8">行间搜索移动</a></li>
+<li><a href="#vim%E6%B0%B4%E5%B9%B3%E7%A7%BB%E5%8A%A8">vim水平移动</a></li>
+<li><a href="#vim%E5%9E%82%E7%9B%B4%E7%A7%BB%E5%8A%A8-%E5%9C%A8%E5%8F%A5%E5%AD%90%E5%92%8C%E6%AE%B5%E8%90%BD%E9%97%B4%E7%A7%BB%E5%8A%A8%E4%B8%8D%E5%B8%B8%E7%94%A8">vim垂直移动 在句子和段落间移动(不常用)</a></li>
+<li><a href="#vim%E9%A1%B5%E9%9D%A2%E7%A7%BB%E5%8A%A8">vim页面移动</a></li>
+</ul>
+</li>
+<li><a href="#vim%E5%BF%AB%E9%80%9F%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5">vim快速增删改查</a><ul>
+<li><a href="#vim%E5%BF%AB%E9%80%9F%E5%88%A0%E9%99%A4">vim快速删除</a></li>
+<li><a href="#vim%E5%BF%AB%E9%80%9F%E4%BF%AE%E6%94%B9">vim快速修改</a></li>
+<li><a href="#vim%E6%9F%A5%E8%AF%A2">vim查询</a></li>
+</ul>
+</li>
+<li><a href="#vim%E6%9B%BF%E6%8D%A2%E5%91%BD%E4%BB%A4">vim替换命令</a><ul>
+<li><a href="#subsitude-%E5%85%81%E8%AE%B8%E6%88%91%E4%BB%AC%E6%9B%BF%E6%8D%A2%E6%96%87%E6%9C%AC%E5%B9%B6%E4%B8%94%E6%94%AF%E6%8C%81%E6%AD%A3%E5%88%99">subsitude 允许我们替换文本并且支持正则</a></li>
+<li><a href="#flag-%E5%B8%B8%E7%94%A8%E6%A0%87%E5%BF%97">flag 常用标志</a></li>
+</ul>
+</li>
+<li><a href="#vim%E5%A4%9A%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C">vim多文件操作</a><ul>
+<li><a href="#buffer-%E5%88%87%E6%8D%A2">buffer 切换</a></li>
+<li><a href="#windown-%E7%AA%97%E5%8F%A3">windown 窗口</a></li>
+<li><a href="#%E9%87%8D%E6%8E%92%E7%AA%97%E5%8F%A3-%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%8F%98%E7%AA%97%E5%8F%A3%E7%9A%84%E5%A4%A7%E5%B0%8F-h-window-resize-%E6%9F%A5%E7%9C%8B%E6%96%87%E6%A1%A3">重排窗口 可以改变窗口的大小 :h window-resize 查看文档</a></li>
+<li><a href="#tab%E6%A0%87%E7%AD%BE%E9%A1%B5-%E6%93%8D%E4%BD%9C">Tab(标签页) 操作</a></li>
+</ul>
+</li>
+<li><a href="#vim-object">vim object</a></li>
+<li><a href="#vim%E5%A4%8D%E5%88%B6-%E7%B2%98%E8%B4%B4-%E4%B8%8E%E5%AF%84%E5%AD%98%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8">vim复制 粘贴 与寄存器的使用</a><ul>
+<li><a href="#normal-%E6%A8%A1%E5%BC%8F%E4%B8%8B">normal 模式下</a></li>
+<li><a href="#insert-%E6%A8%A1%E5%BC%8F%E4%B8%8B">insert 模式下</a></li>
+<li><a href="#%E5%AF%84%E5%AD%98%E5%99%A8">寄存器</a></li>
+</ul>
+</li>
+<li><a href="#vim-%E5%B8%B8%E8%A7%81%E7%9A%84%E8%A1%A5%E5%85%A8">vim 常见的补全</a></li>
+<li><a href="#vim%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE">vim常用配置</a></li>
+<li><a href="#vim-%E6%98%A0%E5%B0%84">vim 映射</a></li>
+<li><a href="#tips-on-vscode">tips on vscode</a></li>
 </ul>
 <p><a href="#vim%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE">vim常用配置</a></p>
 <p>《笨方法学vimscript》</p>
@@ -386,7 +427,7 @@
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2023 John Doe
+        &copy; 2024 John Doe
       </div>
         <div class="footer-right">
           <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/preccrep/hexo-theme-jelly" target="_blank">Jelly</a>
